@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body class="bg-cyan-400">
+    <nav
+      class="p-5 bg-white drop-shadow md:flex md:items-center md:justify-between"
+    >
+      <div class="flex justify-between items-center">
+        <span class="cursor-pointer"
+          ><img class="h-9 inline" src="tailwind.png" alt=""
+        /></span>
+        <span class="text-3xl cursor-pointer md:hidden block mx-2"
+          ><ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon
+        ></span>
+      </div>
+
+      <ul
+        class="md:flex md:items-center md:justify-center z-[-1] md:z-auto absolute md:static bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-100 top-[-400px] transition-all ease-in duration-500"
+      >
+        <li class="mx-4 my-6 md:my-0">
+          <a class="text hover:text-cyan-500 duration-500" href="#">Home</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a class="text hover:text-cyan-500 duration-500" href="#">Product</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a class="text hover:text-cyan-500 duration-500" href="#">About</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a class="text hover:text-cyan-500 duration-500" href="#">Contact</a>
+        </li>
+
+        <button
+          class="bg-cyan-400 text-white px-6 py-2 mx-4 hover:bg-cyan-600 rounded"
+        >
+          BuyNow!
+        </button>
+      </ul>
+    </nav>
+    <script>
+      function Menu(e) {
+        let list = document.querySelector("ul");
+        e.name === "menu"
+          ? ((e.name = "close"), list.classList.add("top-[75px]"))
+          : ((e.name = "menu"),
+            list.classList.remove("top-[75px]"),
+            list.classList.remove("opacity-100"));
+      }
+    </script>
+  </body>
+</html>
